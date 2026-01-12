@@ -1,20 +1,19 @@
-let age = prompt("Please enter your age:");
+const input = prompt("Please enter your age:");
 
-// If user clicks "Cancel", age will be null
-if (age === null) {
-  console.warn("You Clicked Cancel");
+// Validate input
+if (!input?.trim()) {
+  // Handle null or empty input
+  console.error(
+    input === null ? "You clicked Cancel" : "Empty input is not allowed!"
+  );
 } else {
-  // Check for empty string
-  if (age.trim() === "") {
-    console.error("Empty String is NOT Allowed, Please Enter Age in NUMBER!");
+  // Convert to number
+  const age = Number(input.trim());
+
+  //   Check for NaN
+  if (Number.isNaN(age)) {
+    console.error("Invalid age entered!");
   } else {
-    // Convert to number
-    age = Number(age.trim());
-    // Check if conversion to number was successful
-    if (isNaN(age)) {
-      console.error("Invalid Age Entered!");
-    } else {
-      console.log("Age is: " + age);
-    }
+    console.log(`Age is: ${age}`);
   }
 }
