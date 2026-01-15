@@ -41,3 +41,59 @@ while (attempts < maxAttempts) {
     }
   }
 }
+
+function addUnlimited(...nums){
+  let ans = nums.reduce(function(prev, curr){
+    return prev + curr;
+  },0)
+  console.log(ans)
+}
+
+addUnlimited(1,2,3,4,5)
+
+
+// IIFE
+
+(function(){
+  console.log('IIFE!')
+})()
+
+
+// CLOSURE
+
+function parent(){
+  let a = 12;
+  function child(){
+    console.log(a)
+  }
+  child()
+}
+parent()
+
+
+// print all elements from the array
+
+let arr = [1,2,3,4,5,6,7,8,9];
+
+for(let i=0;i<arr.length;i++){
+  console.log(arr[i]);
+}
+
+// Print keys and key's value from obj
+
+let obj = {
+  name:"Bhavesh",
+  age:21,
+  gender:"Male"
+}
+
+for(let key in obj){
+  console.log(key);
+  console.log(obj[key]);
+}
+
+// setTimeOut
+
+setTimeout(function(){
+  console.log("Time is Up!");
+}, 2000)
