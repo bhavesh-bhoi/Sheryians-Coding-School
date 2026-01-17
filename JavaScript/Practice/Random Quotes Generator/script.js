@@ -57,6 +57,7 @@ generateQuotes.addEventListener("click", function () {
   let posY = Math.floor(Math.random() * 80);
 
   let rotat = Math.floor(Math.random() * 361);
+  let textSize = Math.floor(Math.random() * 3);
 
   quote.style.color = "white";
   quote.style.position = "absolute";
@@ -65,6 +66,7 @@ generateQuotes.addEventListener("click", function () {
   quote.style.padding = 10 + "px";
   quote.style.borderRadius = 5 + "px";
   quote.style.rotate = rotat + "deg";
+  quote.style.fontSize = textSize + "rem";
   quote.style.backgroundColor = `rgb(${redColor},${greenColor},${blueColor})`;
 
   quoteIndex = Math.floor(Math.random() * quotes.length);
