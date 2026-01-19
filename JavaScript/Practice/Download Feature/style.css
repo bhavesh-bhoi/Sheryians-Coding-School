@@ -1,0 +1,80 @@
+body {
+    background: #0f172a;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    color: #e5e7eb;
+}
+
+.download-card {
+    background: #020617;
+    border-radius: 16px;
+    padding: 24px 28px 28px;
+    width: 320px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border: 1px solid #1e293b;
+}
+
+.title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    letter-spacing: 0.3px;
+}
+
+.progress-wrapper {
+    background: #0f172a;
+    border-radius: 999px;
+    height: 12px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    border: 1px solid #1e293b;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #22c55e, #16a34a);
+    border-radius: 999px;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    margin-bottom: 18px;
+    color: #94a3b8;
+}
+
+.percent {
+    font-weight: 600;
+    color: #e5e7eb;
+}
+
+.download-btn {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: none;
+    background: #2563eb;
+    color: #f8fafc;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.35);
+}
+
+.download-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.download-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
