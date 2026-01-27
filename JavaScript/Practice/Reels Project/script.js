@@ -6,6 +6,7 @@ const reels = [
     description: "Every brother’s attitude after using sister’s skincare",
     isLiked: true,
     isFollowing: true,
+    isMuted: false,
     likes: 842,
     comments: 37,
     shares: 12,
@@ -18,6 +19,7 @@ const reels = [
     description: "POV: you finally took that solo trip",
     isLiked: false,
     isFollowing: false,
+    isMuted: false,
     likes: 1203,
     comments: 94,
     shares: 41,
@@ -30,6 +32,7 @@ const reels = [
     description: "When the street food hits different",
     isLiked: true,
     isFollowing: false,
+    isMuted: false,
     likes: 967,
     comments: 58,
     shares: 22,
@@ -42,6 +45,7 @@ const reels = [
     description: "Day 1 or one day. Choose wisely",
     isLiked: false,
     isFollowing: true,
+    isMuted: false,
     likes: 2310,
     comments: 143,
     shares: 87,
@@ -54,6 +58,7 @@ const reels = [
     description: "Soft lights, calm mind, late night thoughts",
     isLiked: true,
     isFollowing: true,
+    isMuted: false,
     likes: 1544,
     comments: 76,
     shares: 39,
@@ -62,6 +67,9 @@ const reels = [
 ];
 
 let reelsContainer = document.querySelector(".reels-container");
+let sound = document.querySelector(".sound");
+let soundOn = document.querySelector(".on");
+let soundMuted = document.querySelector(".muted");
 
 function addReel() {
   let allReelsHTML = "";
@@ -70,8 +78,7 @@ function addReel() {
   reels.forEach(function (reel, index) {
     allReelsHTML += `
     <div class="reels">
-      <video autoplay loop muted src="${reel.video}"></video>
-
+      <video ${index} autoplay loop muted ${reel.isMuted ? "muted" : ""} src="${reel.video}"></video>
       <div class="bottom">
         <div class="profile-info">
           <img src="${reel.profileImage}" alt="" />
@@ -146,3 +153,20 @@ reelsContainer.addEventListener("click", function (dets) {
     addReel(reels);
   }
 });
+
+sound.addEventListener("click", function(){
+  let allVideos = document.querySelectorAll("video");
+  allVideos.forEach(function(video, index){
+    if(reels[index].isMuted){
+      video.muted = false;
+      reels[index].isMuted = false;
+      sound.classList.add("active");
+      reels[index].video.play();
+    } else {
+      video.muted = true;
+      reels[index].isMuted = true;
+      sound.classList.remove("active");
+      reels[index].video.pause();
+    }
+  })
+})

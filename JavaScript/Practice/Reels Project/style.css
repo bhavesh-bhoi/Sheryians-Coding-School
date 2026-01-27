@@ -137,3 +137,62 @@ body {
 .right p {
   pointer-events: none;
 }
+
+/* Sound toggle container */
+.sound {
+  position: absolute;
+  top: 60px;
+  left: 58vw;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.sound:hover {
+  /* transform: scale(0.95); */
+  background: rgba(0, 0, 0, 0.8);
+}
+
+sound:active {
+  transform: scale(0.95);
+}
+
+/* Icons */
+.sound-icon {
+  width: 22px;
+  height: 22px;
+  color: #fff;
+  stroke: currentColor;
+  position: absolute;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+/* Default state: muted ON */
+.sound-icon.on {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.sound-icon.muted {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Active sound ON */
+.sound.active .sound-icon.on {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.sound.active .sound-icon.muted {
+  opacity: 0;
+  transform: scale(0.8);
+}
