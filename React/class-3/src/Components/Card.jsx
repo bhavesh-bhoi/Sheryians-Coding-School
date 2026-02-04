@@ -26,8 +26,10 @@ import React from "react";
 const Card = (props) => {
   return (
     <div className="w-64 mb-5 h-40 bg-red-500 rounded-lg shadow-lg flex items-center justify-center text-white text-2xl font-bold">
-      {props.user + "`s "} {" Age is :"}
-      {props.age}
+      {/* {props.user + "`s "} {" Age is :"}
+      {props.age} */}
+      
+      {props.user}
     </div>
   );
 };

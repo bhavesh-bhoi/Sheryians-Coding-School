@@ -4,8 +4,16 @@ import Card from "./Components/Card";
 import Cards from "./Components/Cards";
 
 function App() {
+
+  const users = [
+    'Bhavesh',
+    'Harsh',
+    'Dev',
+    'Bhavu'
+  ]
+
   return (
-    <div className="h-screen bg-black items-center justify-center">
+    <div className="h-screen bg-black items-center text-white justify-center">
       {/* Two ways to render card */}
 
       {/* render as a function */}
@@ -22,9 +30,13 @@ function App() {
       {/* {Cards('Bhavesh')}
       {Cards('Bhavu')} */}
 
-      <Button text="Click Me!" style="bg-red-500 hover:bg-red-600" />
+      {/* <Button text="Click Me!" style="bg-red-500 hover:bg-red-600" />
       <Button text="Hover Me!" style="bg-green-500 hover:bg-green-600" />
-      <Button text="Hold Me!" style="bg-yellow-500 hover:bg-yellow-600" />
+      <Button text="Hold Me!" style="bg-yellow-500 hover:bg-yellow-600" /> */}
+
+      {users.map(function(user){
+        return <Card user={user} />;
+      })}
     </div>
   );
 }
