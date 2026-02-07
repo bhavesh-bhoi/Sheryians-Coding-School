@@ -10,6 +10,7 @@ console.log(user);
 
 // Classes
 // Classes returns new objects everytime
+// Constructor - a function which is called automatically when instance is created using class
 
 class SmartPhone {
   constructor() {
