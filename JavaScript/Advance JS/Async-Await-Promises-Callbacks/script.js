@@ -64,3 +64,35 @@ getUSer("person1", function (data) {
     console.log(data.username, allPosts);
   });
 });
+
+// Callback Level 3 - ABOVE INTERMEDIATE
+
+function loginUser(unm, cbf) {
+  console.log("Logging User...");
+
+  setTimeout(function () {
+    cbf({ id: 1, unm: "User1", pwd: "user123" });
+  }, 1000);
+}
+function fetchPermissions(id, cb) {
+  console.log("Fetching Permissions...");
+
+  setTimeout(function () {
+    cb(["Access", "Granted"]);
+  }, 1000);
+}
+function loadDashboard(permission, cbf) {
+  console.log("Loading Dashboard...");
+
+  setTimeout(() => {
+    cbf();
+  }, 2000);
+}
+
+loginUser("User1", function (userData) {
+  fetchPermissions(userData.id, function (permission) {
+    loadDashboard(permission, function () {
+      console.log("Dashboard Loaded!");
+    });
+  });
+});
