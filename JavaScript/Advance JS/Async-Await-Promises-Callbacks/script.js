@@ -20,7 +20,7 @@ function f1(f2) {
   f2(function (f4) {
     f4(function (f6) {
       f6();
-    //   console.log("Function 6 Executed!");
+      //   console.log("Function 6 Executed!");
     });
   });
 }
@@ -30,5 +30,37 @@ f1(function (f3) {
     f5(function () {
       console.log("Function 5 Executed!");
     });
+  });
+});
+
+// Callback Level 1 - BASIC
+
+function afterDelay(time, cbf) {
+  setTimeout(function () {
+    cbf();
+  }, time);
+}
+
+afterDelay(3000, function () {
+  console.log("CallBack Level 1 Executed!");
+});
+
+// Callback Level 2 - INTERMEDIATE
+
+function getUSer(username, cbf) {
+  setTimeout(function () {
+    cbf({ id: 1, username: "person1" });
+  }, 1000);
+}
+
+function getUSerPosts(id, cb) {
+  setTimeout(function () {
+    cb(["Hello GM", "Good AF", "Good EVE"]);
+  }, 2000);
+}
+
+getUSer("person1", function (data) {
+  getUSerPosts(data.id, function (allPosts) {
+    console.log(data.username, allPosts);
   });
 });
