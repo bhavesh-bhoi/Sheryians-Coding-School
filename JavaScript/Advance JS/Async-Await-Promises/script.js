@@ -13,3 +13,13 @@ pro
   .catch(function () {
     console.log("Rejected!!!");
   });
+
+// API Example
+
+let data = fetch("https://randomuser.me/api/")
+  .then(function (unstructuredData) {
+    return unstructuredData.json();
+  })
+  .then(function (realData) {
+    console.log(realData);
+  });
