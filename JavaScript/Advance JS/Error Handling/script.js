@@ -17,3 +17,12 @@ try {
 } finally {
   console.log("Error Handled!!!");
 }
+
+// How to Throw Errors in JavaScript
+
+try {
+  let a = 10;
+  console.log(a.name.age);
+} catch (err) {
+  throw new Error("Something Went Wrong!");
+}
