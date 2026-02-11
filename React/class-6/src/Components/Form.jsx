@@ -1,13 +1,20 @@
 import { useState } from "react";
 
 const Form = () => {
+  const [name, setName] = useState("");
+  const [allUsers, setAllUsers] = useState([]);
+
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log("Form Submitted!");
+    // console.log("Form Submitted!");
+
+    const oldUsers = [...allUsers];
+    oldUsers.push(name);
+    // console.log(oldUsers);
+
+    setAllUsers(oldUsers);
     setName("");
   };
-
-  const [name, setName] = useState("");
 
   return (
     <div className="formContainer">
@@ -29,6 +36,9 @@ const Form = () => {
           <button>Submit</button>
         </div>
       </form>
+      {allUsers.map((user, index) => {
+        return <h1 key={index}>{user}</h1>;
+      })}
     </div>
   );
 };
