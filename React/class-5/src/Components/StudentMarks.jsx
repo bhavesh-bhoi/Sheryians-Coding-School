@@ -5,7 +5,11 @@ const StudentMarks = () => {
 
   function addGraceMarks() {
     let newMarks = marks.map(function (mark) {
-      return mark + 5;
+      if (mark <= 33) {
+        return mark + 5;
+      } else {
+        return mark;
+      }
     });
 
     setMarks(newMarks);
