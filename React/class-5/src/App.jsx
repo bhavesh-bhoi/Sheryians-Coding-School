@@ -1,38 +1,12 @@
-// import { useState } from "react";
+import "./App.css";
+import Counter from "./Components/Counter";
 
-// const App = () => {
-//   const [count, setcount] = useState(0);
-
-//   return (
-//     <div>
-//       <h1>{count}</h1>
-//       <button onClick={() => setcount(count + 1)}>Increase</button>
-//     </div>
-//   );
-// };
-
-// export default App;
-
-import { useState } from "react";
-
-const App = () => {
-  const [count, setcount] = useState(0);
-
-  function handleCountInc() {
-    setcount(count + 1);
-  }
-
-  function handleCountDec() {
-    count <= 0 ? 0 : setcount(count - 1);
-  }
-
+function App() {
   return (
-    <div>
-      <h1>{count}</h1>
-      <button onClick={handleCountInc}>Increase</button>
-      <button onClick={handleCountDec}>Decrease</button>
-    </div>
+    <>
+      <Counter />
+    </>
   );
-};
+}
 
 export default App;
