@@ -33,7 +33,14 @@ const UsingCardComponent = () => {
 
   const deleteHandler = (index) => {
     const usersCopy = [...allUsers];
-    usersCopy.splice(index, 1);
+
+    // Delete Confirmation Modal
+    const confirmDelete = confirm("Are You Sure Want To Delete?");
+    if (confirmDelete) {
+      usersCopy.splice(index, 1);
+    } else {
+      alert("User Not Deleted!");
+    }
 
     setAllUsers(usersCopy);
     // delete from localstorage
