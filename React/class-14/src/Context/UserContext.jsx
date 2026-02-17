@@ -4,11 +4,22 @@ export const UserDataContext = createContext();
 
 const user = 'Bhavesh'
 
-const UserContext = (props) => {
+// const UserContext = (props) => {
+//   return (
+//     <div className="context-div">
+//       <UserDataContext.Provider value={user}>
+//         <h1>{props.children}</h1>
+//       </UserDataContext.Provider>
+//     </div>
+//   );
+// };
+
+// Using Destructuring
+const UserContext = ({children}) => {
   return (
     <div className="context-div">
       <UserDataContext.Provider value={user}>
-        <h1>{props.children}</h1>
+        <h1>{children}</h1>
       </UserDataContext.Provider>
     </div>
   );
