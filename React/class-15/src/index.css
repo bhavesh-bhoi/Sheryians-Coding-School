@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.nav{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(32, 134, 218);
+  padding: 20px;
+}
+
+.footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: goldenrod;
+  padding: 100px;
+}
+
+.sections{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: green;
+  padding: 172px;
+}
