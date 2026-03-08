@@ -12,6 +12,28 @@ body {
   padding: 40px;
 }
 
+h1 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 40px;
+}
+
+h2 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 40px;
+  font-size: 100px;
+}
+
+.loading {
+  font-size: 120px;
+  color: #4f46e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
 /* Products Container */
 .allProducts {
   display: flex;
@@ -92,4 +114,25 @@ button {
 button:hover {
   background: linear-gradient(135deg, #4338ca, #4f46e5);
   transform: rotate(2deg) scale(1.05);
+}
+
+/* Product Detail Page */
+
+.productDetails h3{
+  font-size: 30px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.productDetails p{
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.productDetails img{
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+  margin-bottom: 20px;
 }
